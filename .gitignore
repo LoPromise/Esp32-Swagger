@@ -2,3 +2,7 @@
 esp-idf-v5.1.7/
 #ignore example
 hello_world/
+venv/
+Swagger_Embedding/build/
+Swagger_Embedding/Swagger_Embedding/gen/
+Swagger_Embedding/Swagger_Embedding/web/

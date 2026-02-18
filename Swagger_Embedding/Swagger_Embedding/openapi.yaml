@@ -1,0 +1,95 @@
+# OpenAPI specification for ESP32 I/O control
+openapi: 3.0.0
+info:
+  title: ESP32 I/O Controller
+  version: 1.0.0
+  description: REST API for setting and reading I/O pins on an ESP32 microcontroller
+
+servers:
+  - url: /:80
+    description: Local Controller
+
+paths:
+  /set_io:
+      post:
+        summary: Set I/O pin value
+        description: Set the state of a specific I/O pin
+        operationId: set_io_handler
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pin:
+                    type: integer
+                    description: GPIO pin number (0-31)
+                  value:
+                    type: boolean
+                    description: Desired state (true = high, false = low)
+                required: [pin, value]
+      responses:
+        '200':
+          description: Successfully set I/O pin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Pin 2 set to high"
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Pin must be between 0 and 31"
+
+  /get_io:
+    get:
+      summary: Read I/O pin value
+      description: Read the current state of a specific I/O pin
+      operationId: get_io_handler
+      parameters:
+        - name: pin
+          in: query
+          required: true
+          description: GPIO pin number (0-31)
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully read I/O pin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  pin:
+                    type: integer
+                    example: 2
+                  value:
+                    type: boolean
+                    example: true
+        '400':
+          description: Invalid pin number
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Pin must be between 0 and 31"
