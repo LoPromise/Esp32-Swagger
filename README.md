@@ -1,0 +1,1 @@
+Purpose of this project is to provide an example how to do in Situ dokumentaion for an ESP32 using industry standard Tooling using Swagger(Openapi), augenerating the API Server so only callbacks are needed to embed Production code. Ensuring that Documentation and Implementation is consistant.
