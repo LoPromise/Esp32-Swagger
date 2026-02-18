@@ -1,4 +1,4 @@
 # Ignore ESP-IDF directory and all subfolders
 esp-idf-v5.1.7/
-
-# Existing content from .gitgnore (if any)
+#ignore example
+hello_world/
