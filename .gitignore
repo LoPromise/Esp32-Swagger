@@ -2,6 +2,7 @@
 esp-idf-v5.1.7/
 #ignore example
 hello_world/
+restful_server/
 venv/
 Swagger_Embedding/build/
 Swagger_Embedding/Swagger_Embedding/gen/
