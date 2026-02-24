@@ -11,7 +11,7 @@
 #include "freertos/task.h"
 #include "esp_chip_info.h"
 #include "esp_flash.h"
-#include <generated_api.h>
+#include "../Swagger_Embedding/gen/generated_api.h"
 
 void app_main(void)
 {
