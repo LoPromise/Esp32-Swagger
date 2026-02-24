@@ -20,8 +20,9 @@ Modern browsers support zipped content, which we leverage to serve the documenta
 ## Considerations
 ### Todos:
 - **Settings**:  
--Generate just header and not embed the file
--proper idf component
+- ***Generate just header and not embed the file***
+- ***proper idf component***
+- ***extracting response codes and autogenerate code from there***
 ### Benefits
 - **Self-contained documentation**: No risk of lost manuals or hosting dependencies.
 - **Efficiency**: Automation reduces manual API implementation effort.
